@@ -1,0 +1,18 @@
+[
+  {
+    "input": "Subject: Q4 Marketing Review\nFrom: Alice Chen\nDate: Mon, 4 Mar 2024 09:12\n\nHi team,\n\nCan we get together next Tuesday at 3 p.m. to start shaping the agenda for the Q4 Marketing Review?\n\nThanks,\nAlice Chen\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Bob Martinez\nDate: Mon, 4 Mar 2024 10:01\n\nTuesday clashes with the product demo. This Thursday at noon would suit me better.\n\nCheers,\nBob\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Dana Lee\nDate: Mon, 4 Mar 2024 10:17\n\nBob, do you mean this Thursday or the one after? Either slot is open on my calendar.\n\nDana\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Alice Chen\nDate: Mon, 4 Mar 2024 11:03\n\nLet's pencil in this Thursday, 14:00, and I'll book the Evergreen Room.\n\n– Alice\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Evan O'Neil (sent from mobile)\nDate: Mon, 4 Mar 2024 11:45\n\nSorry, I'm visiting a client that day. What about the second Monday of April, half past nine in the morning?\n\nEvan\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Bob Martinez\nDate: Tue, 5 Mar 2024 08:02\n\nThat's too late for me; we need numbers locked sooner. Two weeks from today at 10:00?\n\nBob\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Alice Chen\nDate: Tue, 5 Mar 2024 08:50\n\nFinance closes on the 18th, so a meeting on the 19th still works. Same day but 09:30 to help Bob?\n\nAlice\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Dana Lee\nDate: Tue, 5 Mar 2024 09:05\n\nThe boardroom is taken then. How about that afternoon at 15:30 instead?\n\nDana\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Evan O'Neil\nDate: Tue, 5 Mar 2024 09:40\n\nI have a webinar that afternoon. Thursday the week after next at 3 p.m. could be a clean option.\n\nEvan\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Alice Chen\nDate: Wed, 6 Mar 2024 07:15\n\nFine, but marketing will be heads-down preparing for TradeFest. Early May—say the first Friday at 08:00?\n\nAlice\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Bob Martinez\nDate: Wed, 6 Mar 2024 07:45\n\nEarly May is when I'm on parental leave. Mid-June, say the 17th, around 11 a.m.?\n\nBob\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Dana Lee\nDate: Wed, 6 Mar 2024 08:10\n\nIf we pick 17 June then three weeks out from then we'll have fresher campaign data; maybe we shoot for that, 8 July at half past ten?\n\nDana\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Evan O'Neil\nDate: Wed, 6 Mar 2024 09:32\n\nSummer vacations will scatter us. Let's reconvene first thing after Labor Day, 09:00 on Tuesday 3 September.\n\nEvan\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Alice Chen\nDate: Wed, 6 Mar 2024 10:00\n\nToo many bumps! Let's lock the second Thursday of November— that's 14 November— at 15:00 for the Q4 Marketing Review and not move it again.\n\nBest,\nAlice",
+    "output": [
+      {
+        "subject": "Q4 Marketing Review",
+        "date": "2024-11-14",
+        "time": "15:00",
+        "invitees": [
+          "Alice Chen",
+          "Bob Martinez",
+          "Dana Lee",
+          "Evan O'Neil"
+        ]
+      }
+    ]
+  }
+]
