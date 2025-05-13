@@ -1,51 +1,38 @@
-// Program to run MIPROv2 optimization. It will
-import { generateObject, generateText } from "ai";
-import { openai } from "@ai-sdk/openai";
-import { google } from "@ai-sdk/google";
+import { generateObject, generateText, type LanguageModelV1 } from "ai";
 import { z } from "zod";
-import { readFileSync } from "node:fs";
+import { extractMeetingsFromEmail } from "./extractMeetingsFromEmail";
+import type { DatasetRow, OptimizableFunction } from "./types";
+import { arrayOfObjectsScorer } from "./scorers";
 
-interface DatasetRow {
-  input: string;
-  output: string;
-}
-
-const smartModel = openai("o3");
-const model = google("gemini-1.5-flash");
-const numTrials = 10;
-const numCandidates = 5; // Number of candidates to generate per trial
-const numSamples = 10; // Number of samples to use for data summary
-const numLabeledExamples = 4; // Number of labeled examples to use for evaluation
-
-const dataset: DatasetRow[] = JSON.parse(
-  readFileSync("data/mipro_v2_dataset.json", "utf8")
-);
-
-// This is the prompt that we'll be optimizing
-const baseSystemPrompt = ``;
-
-async function generateDataSummary(dataset: DatasetRow[], sampleSize: number) {
-  const sample = dataset.slice(0, sampleSize);
-  const systemPrompt = `Analyze the following dataset examples and provide a summary of key patterns, input-output relationships, and any specific challenges the data presents. Focus on what makes a good answer and what patterns should be followed.`;
-  const dataStr = `${sample.map((row) => JSON.stringify(row)).join("\n")}`;
+async function generateDataSummary<Input, Output>(
+  dataset: DatasetRow<Input, Output>[],
+  sampleSize: number,
+  model: LanguageModelV1
+) {
+  console.log(`Generating data summary for ${sampleSize} samples`);
+  const sample = selectRandomRowsFromDataset(dataset, sampleSize);
+  const system = `Analyze the following dataset examples and provide a summary of key patterns, input-output relationships, and any specific challenges the data presents. Focus on what makes a good answer and what patterns should be followed.`;
+  const prompt = `${sample.map((row) => JSON.stringify(row)).join("\n")}`;
 
   return (
     await generateText({
-      system: systemPrompt,
-      model: smartModel,
-      prompt: dataStr,
+      system,
+      model,
+      prompt,
     })
   ).text;
 }
 
-async function proposeInstructionCandidates(
-  basePrompt: string,
-  dataset: DatasetRow[],
+export async function proposeInstructionCandidates<Input, Output>(
+  prompt: string,
+  dataset: DatasetRow<Input, Output>[],
   numCandidates: number,
-  numSamples: number
-) {
-  const dataContext = await generateDataSummary(dataset, numSamples);
-  const prompt = `Create ${numCandidates} high-quality instruction for an AI model performing the task described below.
+  numSamples: number,
+  model: LanguageModelV1
+): Promise<string[]> {
+  console.log(`Generating ${numCandidates} instruction candidates`);
+  const dataContext = await generateDataSummary(dataset, numSamples, model);
+  const system = `Create ${numCandidates} high-quality instruction for an AI model performing the task described below.
     
   ${dataContext ? `<data-context>\n${dataContext}\n</data-context>\n\n` : ""}
   
@@ -53,41 +40,152 @@ Your task is to craft a clear, effective variation of the following instruction 
   
 The instruction should be detailed enough to guide the model but not overly prescriptive or restrictive. Focus on what makes a good response rather than listing exact steps.`;
 
-  return await generateObject({
-    system: prompt,
-    model: model,
-    prompt: basePrompt,
+  const result = await generateObject({
+    system,
+    model,
+    prompt,
     output: "array",
-    schema: z.string(),
+    schema: z.object({ newPrompt: z.string() }),
   });
+  return result.object.map((o) => o.newPrompt);
 }
 
-async function runBayesianOptimization(promptCandidates: string[]) {
-  const trials = [];
-  for (let i = 0; i < numTrials; i++) {
-    const trial = await runTrial(
-      promptCandidates,
-      dataset,
-      numCandidates,
-      numSamples
-    );
+export async function evaluate<Input, Output>(
+  instruction: string,
+  fewShotExamples: DatasetRow<Input, Output>[],
+  evalDataset: DatasetRow<Input, Output>[],
+  fn: OptimizableFunction<Input, Output>,
+  scorer: (output: Output, expected: Output) => number
+) {
+  let score = 0;
+  console.log(`Evaluating: ${instruction}`);
+  for (const row of evalDataset) {
+    const output = await fn(row.input, fewShotExamples, instruction);
+    const expected = row.output;
+    score += scorer(output, expected);
   }
+
+  return {
+    score: evalDataset.length === 0 ? 0 : score / evalDataset.length,
+    instruction,
+    fewShotExamples,
+  };
 }
 
-function selectLabeledExamples(
-  dataset: DatasetRow[],
+/**
+ * Try to find {numExamples} examples that give us correct results already
+ */
+export async function bootstrapFewShotExamples<Input, Output>(
+  prompt: string,
+  dataset: DatasetRow<Input, Output>[],
+  numExamples: number,
+  fn: OptimizableFunction<string, Output>,
+  scorer: (output: Output, expected: Output) => number
+) {
+  const examples: DatasetRow<Input, Output>[] = [];
+  for (const row of dataset) {
+    const output = await fn(row.input as string, [], prompt);
+    const score = scorer(output, row.output);
+    if (score === 1) {
+      examples.push(row);
+      if (examples.length >= numExamples) {
+        break;
+      }
+    }
+  }
+  return examples;
+}
+
+export function selectRandomRowsFromDataset<Input, Output>(
+  dataset: DatasetRow<Input, Output>[],
   maxExamples: number
-): DatasetRow[] {
+): DatasetRow<Input, Output>[] {
   const shuffled = [...dataset].sort(() => Math.random() - 0.5);
   return shuffled.slice(0, Math.min(maxExamples, shuffled.length));
 }
 
-const labeledExamples = selectLabeledExamples(dataset, numLabeledExamples);
-const candidates = await proposeInstructionCandidates(
-  baseSystemPrompt,
-  dataset,
-  numCandidates,
-  numSamples
-);
+export async function runBayesianOptimization<Input, Output>(
+  promptCandidates: string[],
+  dataset: DatasetRow<Input, Output>[],
+  fn: OptimizableFunction<Input, Output>,
+  scorer: (output: Output, expected: Output) => number,
+  {
+    model,
+    numTrials,
+    numFewShot,
+    miniBatchSize,
+    miniBatchFullEvalSteps,
+  }: {
+    model: LanguageModelV1;
+    numTrials: number;
+    numFewShot: number;
+    miniBatchSize: number;
+    miniBatchFullEvalSteps: number;
+  }
+) {
+  const stats = new Map<string, { total: number; count: number }>();
+  let best: {
+    instruction: string;
+    score: number;
+    fewShotExamples: DatasetRow<Input, Output>[];
+  } | null = null;
+  const demosRegistry = new Map<string, DatasetRow<Input, Output>[]>();
 
-console.log("Randomly selected labeled examples:", labeledExamples);
+  for (let t = 0; t < numTrials; t++) {
+    console.log(`##### Trial ${t + 1} of ${numTrials} #####`);
+    let instruction: string;
+
+    if (t < promptCandidates.length) {
+      instruction = promptCandidates[t];
+    } else {
+      let maxUcb = -Infinity;
+      let bestInstr = promptCandidates[0];
+      const logT = Math.log(t + 1);
+      for (const cand of promptCandidates) {
+        const stat = stats.get(cand);
+        if (!stat) {
+          bestInstr = cand;
+          break;
+        }
+        const mean = stat.total / stat.count;
+        const ucb = mean + Math.sqrt((2 * logT) / stat.count);
+        if (ucb > maxUcb) {
+          maxUcb = ucb;
+          bestInstr = cand;
+        }
+      }
+      instruction = bestInstr;
+    }
+
+    // Sample demos and mini-batch once per trial
+    let demos = demosRegistry.get(instruction);
+    if (!demos) {
+      demos = selectRandomRowsFromDataset(dataset, numFewShot);
+      demosRegistry.set(instruction, demos);
+    }
+    const miniBatch = selectRandomRowsFromDataset(dataset, miniBatchSize);
+    const { score } = await evaluate(instruction, demos, miniBatch, fn, scorer);
+
+    const current = stats.get(instruction) || { total: 0, count: 0 };
+    current.total += score;
+    current.count += 1;
+    stats.set(instruction, current);
+
+    if (!best || score > best.score)
+      best = { instruction, score, fewShotExamples: demos };
+
+    // Full-dataset evaluation every `miniBatchFullEvalSteps` trials
+    if ((t + 1) % miniBatchFullEvalSteps === 0) {
+      const fullScore = await evaluate(instruction, demos, dataset, fn, scorer);
+      if (fullScore.score > (best?.score ?? 0)) {
+        best = {
+          instruction: fullScore.instruction,
+          score: fullScore.score,
+          fewShotExamples: fullScore.fewShotExamples,
+        };
+      }
+    }
+  }
+
+  return best;
+}
