@@ -1,16 +1,1489 @@
 [
   {
-    "input": "Subject: Q4 Marketing Review\nFrom: Alice Chen\nDate: Mon, 4 Mar 2024 09:12\n\nHi team,\n\nCan we get together next Tuesday at 3 p.m. to start shaping the agenda for the Q4 Marketing Review?\n\nThanks,\nAlice Chen\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Bob Martinez\nDate: Mon, 4 Mar 2024 10:01\n\nTuesday clashes with the product demo. This Thursday at noon would suit me better.\n\nCheers,\nBob\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Dana Lee\nDate: Mon, 4 Mar 2024 10:17\n\nBob, do you mean this Thursday or the one after? Either slot is open on my calendar.\n\nDana\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Alice Chen\nDate: Mon, 4 Mar 2024 11:03\n\nLet's pencil in this Thursday, 14:00, and I'll book the Evergreen Room.\n\n– Alice\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Evan O'Neil (sent from mobile)\nDate: Mon, 4 Mar 2024 11:45\n\nSorry, I'm visiting a client that day. What about the second Monday of April, half past nine in the morning?\n\nEvan\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Bob Martinez\nDate: Tue, 5 Mar 2024 08:02\n\nThat's too late for me; we need numbers locked sooner. Two weeks from today at 10:00?\n\nBob\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Alice Chen\nDate: Tue, 5 Mar 2024 08:50\n\nFinance closes on the 18th, so a meeting on the 19th still works. Same day but 09:30 to help Bob?\n\nAlice\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Dana Lee\nDate: Tue, 5 Mar 2024 09:05\n\nThe boardroom is taken then. How about that afternoon at 15:30 instead?\n\nDana\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Evan O'Neil\nDate: Tue, 5 Mar 2024 09:40\n\nI have a webinar that afternoon. Thursday the week after next at 3 p.m. could be a clean option.\n\nEvan\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Alice Chen\nDate: Wed, 6 Mar 2024 07:15\n\nFine, but marketing will be heads-down preparing for TradeFest. Early May—say the first Friday at 08:00?\n\nAlice\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Bob Martinez\nDate: Wed, 6 Mar 2024 07:45\n\nEarly May is when I'm on parental leave. Mid-June, say the 17th, around 11 a.m.?\n\nBob\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Dana Lee\nDate: Wed, 6 Mar 2024 08:10\n\nIf we pick 17 June then three weeks out from then we'll have fresher campaign data; maybe we shoot for that, 8 July at half past ten?\n\nDana\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Evan O'Neil\nDate: Wed, 6 Mar 2024 09:32\n\nSummer vacations will scatter us. Let's reconvene first thing after Labor Day, 09:00 on Tuesday 3 September.\n\nEvan\n\n---\nSubject: Re: Q4 Marketing Review\nFrom: Alice Chen\nDate: Wed, 6 Mar 2024 10:00\n\nToo many bumps! Let's lock the second Thursday of November— that's 14 November— at 15:00 for the Q4 Marketing Review and not move it again.\n\nBest,\nAlice",
+    "input": "From: Alice Chen <alice@example.com>\nTo: Bob Martin <bob@example.com>; Grace Patel <grace@example.com>\nSubject: Design sync next week\n\nHi Bob and Grace,\n\nCan we have a quick design sync next Friday at 15:30? If that doesn’t work I’m flexible in the morning.\n\nThanks,\nAlice",
     "output": [
       {
-        "subject": "Q4 Marketing Review",
-        "date": "2024-11-14",
-        "time": "15:00",
+        "subject": "Design Sync",
+        "date": "2024-06-28",
+        "time": "15:30",
         "invitees": [
           "Alice Chen",
-          "Bob Martinez",
+          "Bob Martin",
+          "Grace Patel"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Kamal Singh <kamal@example.com>\nTo: Dana Lee <dana@example.com>\nCc: Rita Gomez <rita@example.com>\nSubject: Quarterly Budget Review Q3\n\nDear Dana,\n\nPer finance policy, we need the Q3 budget review on 2024-07-10 at 11:00. Rita will join us.\n\nRegards,\nKamal",
+    "output": [
+      {
+        "subject": "Budget Review Q3",
+        "date": "2024-07-10",
+        "time": "11:00",
+        "invitees": [
+          "Kamal Singh",
           "Dana Lee",
-          "Evan O'Neil"
+          "Rita Gomez"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Carlos Diaz <carlos@example.com>\nTo: Evelyn Wright <evelyn@example.com>\nSubject: Kick-off\n\nEvelyn,\n\nLet’s kick off the analytics project on 2 Aug 2024 at 09:00.\n\n– Carlos",
+    "output": [
+      {
+        "subject": "Analytics Project Kick-off",
+        "date": "2024-08-02",
+        "time": "09:00",
+        "invitees": [
+          "Carlos Diaz",
+          "Evelyn Wright"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Sven Larsson <sven@example.com>\nTo: Marco Rossi <marco@example.com>; Tara Kim <tara@example.com>; Omar Haddad <omar@example.com>\nSubject: Weekly stand-up\n\nTeam,\n\nOur first weekly stand-up will be every Tuesday. Let’s start on 2024-09-03 at 10:30.\n\nCheers,\nSven",
+    "output": [
+      {
+        "subject": "Weekly Stand-up",
+        "date": "2024-09-03",
+        "time": "10:30",
+        "invitees": [
+          "Sven Larsson",
+          "Marco Rossi",
+          "Tara Kim",
+          "Omar Haddad"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Nina Johansson <nina@example.com>\nTo: Jack O'Neill <jack@example.com>\nSubject: Coffee chat tomorrow\n\nJack,\n\nWant to grab coffee tomorrow around 08:00? Just a quick catch-up.\n\nNina",
+    "output": [
+      {
+        "subject": "Coffee Chat",
+        "date": "2024-06-21",
+        "time": "08:00",
+        "invitees": [
+          "Nina Johansson",
+          "Jack O'Neill"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Board Assistant <assist@corp.com>\nTo: Board Members\nSubject: RE: Fwd: Board Meeting Schedule\n\nGood afternoon,\n\nAfter several iterations, the board has agreed on the following:\n• Main board meeting – 2024-10-15 at 14:00\nPlease mark your calendars.\n\nRegards,\nSam",
+    "output": [
+      {
+        "subject": "Board Meeting",
+        "date": "2024-10-15",
+        "time": "14:00",
+        "invitees": [
+          "Board Members"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Grace Patel <grace@example.com>\nTo: Hiroshi Tanaka <hiroshi@example.com>\nSubject: Reschedule 1:1\n\nHi Hiroshi,\n\nI’m so sorry. Could we move our 1:1 originally set for 2024-06-24 at 09:00 to 2024-06-25 at 09:30 instead?\n\nThanks,\nGrace",
+    "output": [
+      {
+        "subject": "1:1 Rescheduled",
+        "date": "2024-06-25",
+        "time": "09:30",
+        "invitees": [
+          "Grace Patel",
+          "Hiroshi Tanaka"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Frank Xu <frank@example.com>\nTo: Lena Müller <lena@example.com>\nSubject: Demo three weeks from today\n\nHi Lena,\n\nLet’s demo the prototype three weeks from today at half past eight in the morning.\n\nFrank",
+    "output": [
+      {
+        "subject": "Prototype Demo",
+        "date": "2024-07-11",
+        "time": "08:30",
+        "invitees": [
+          "Frank Xu",
+          "Lena Müller"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Alice Chen <alice@example.com>\nTo: Quinn Parker <quinn@example.com>\nSubject: UX Review next Monday\n\nQuinn,\n\nNext Monday at noon works for the UX review, right?\n\n- Alice",
+    "output": [
+      {
+        "subject": "UX Review",
+        "date": "2024-06-24",
+        "time": "12:00",
+        "invitees": [
+          "Alice Chen",
+          "Quinn Parker"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Omar Haddad <omar@example.com>\nTo: Carlos Diaz <carlos@example.com>\nSubject: Investor Call\n\nCarlos,\n\nOur investor wants a call on 2024-11-07 at 07:00.\nLet me know.\n\n- Omar",
+    "output": [
+      {
+        "subject": "Investor Call",
+        "date": "2024-11-07",
+        "time": "07:00",
+        "invitees": [
+          "Omar Haddad",
+          "Carlos Diaz"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Rita Gomez <rita@example.com>\nTo: Priya Kapoor <priya@example.com>; Kamal Singh <kamal@example.com>\nSubject: Customer Interview – coming Tuesday\n\nHi both,\n\nThe customer confirmed coming Tuesday at 16:45 for the interview.\n\nRita",
+    "output": [
+      {
+        "subject": "Customer Interview",
+        "date": "2024-06-25",
+        "time": "16:45",
+        "invitees": [
+          "Rita Gomez",
+          "Priya Kapoor",
+          "Kamal Singh"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Bob Martin <bob@example.com>\nTo: Alice Chen <alice@example.com>\nSubject: CANCELLED – Strategy Off-site\n\nHi Alice,\n\nThe strategy off-site planned for 2024-07-18 is cancelled. We’ll revisit later.\n\nBob",
+    "output": []
+  },
+  {
+    "input": "From: Evelyn Wright <evelyn@example.com>\nTo: Sven Larsson <sven@example.com>\nSubject: Year-end Audit Prep\n\nSven,\n\nDecember 3, 2024 at 14:30 is our prep meeting for the audit.\n\nEvelyn",
+    "output": [
+      {
+        "subject": "Audit Prep",
+        "date": "2024-12-03",
+        "time": "14:30",
+        "invitees": [
+          "Evelyn Wright",
+          "Sven Larsson"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: HR Bot <hr@corp.com>\nTo: Nina Johansson <nina@example.com>\nSubject: Orientation Session #12\n\nAuto-schedule: 2025-01-06 10:00 local time.\n\nThis is an automated message.",
+    "output": [
+      {
+        "subject": "Orientation Session",
+        "date": "2025-01-06",
+        "time": "10:00",
+        "invitees": [
+          "Nina Johansson"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Jack O'Neill <jack@example.com>\nTo: Omar Haddad <omar@example.com>; Grace Patel <grace@example.com>\nSubject: Engineering Retro – two weeks out\n\nFolks,\n\nLet’s run retro two weeks from today at 17:15.\n\nJack",
+    "output": [
+      {
+        "subject": "Engineering Retro",
+        "date": "2024-07-04",
+        "time": "17:15",
+        "invitees": [
+          "Jack O'Neill",
+          "Omar Haddad",
+          "Grace Patel"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Marco Rossi <marco@example.com>\nTo: Board Assistant <assist@corp.com>\nSubject: Fwd: Annual General Meeting logistics\n\nSee thread below. AGM confirmed for 2025-04-22 at 13:00.\n\n--- Forwarded message ‑--\n…",
+    "output": [
+      {
+        "subject": "Annual General Meeting",
+        "date": "2025-04-22",
+        "time": "13:00",
+        "invitees": [
+          "Board Assistant",
+          "Marco Rossi"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Quinn Parker <quinn@example.com>\nTo: Tara Kim <tara@example.com>\nSubject: Next Friday sync\n\nHey Tara,\n\nQuick 20-min sync next Friday at 09:45?\n\n- Q",
+    "output": [
+      {
+        "subject": "Quick Sync",
+        "date": "2024-06-28",
+        "time": "09:45",
+        "invitees": [
+          "Quinn Parker",
+          "Tara Kim"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Lena Müller <lena@example.com>\nTo: Frank Xu <frank@example.com>\nSubject: Follow-up after demo\n\nFrank,\n\nCan we chat on 2024-07-12 at quarter to nine?\n\nLena",
+    "output": [
+      {
+        "subject": "Demo Follow-up",
+        "date": "2024-07-12",
+        "time": "08:45",
+        "invitees": [
+          "Lena Müller",
+          "Frank Xu"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Sven Larsson <sven@example.com>\nTo: All Hands\nSubject: Town hall announcement\n\nTown hall on 2024-09-30 at 11:00 sharp.\n\nBR,\nSven",
+    "output": [
+      {
+        "subject": "Town Hall",
+        "date": "2024-09-30",
+        "time": "11:00",
+        "invitees": [
+          "All Hands"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Hiroshi Tanaka <hiroshi@example.com>\nTo: Rita Gomez <rita@example.com>\nSubject: Lab visit\n\nRita-san,\n\nLab visit scheduled for 2024-08-19 15:00.\n\nよろしく,\nHiroshi",
+    "output": [
+      {
+        "subject": "Lab Visit",
+        "date": "2024-08-19",
+        "time": "15:00",
+        "invitees": [
+          "Hiroshi Tanaka",
+          "Rita Gomez"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Alice Chen <alice@example.com>\nTo: Nina Johansson <nina@example.com>\nSubject: Scratch the meeting\n\nLet’s cancel everything for now.\n\n- A",
+    "output": []
+  },
+  {
+    "input": "From: Tara Kim <tara@example.com>\nTo: Priya Kapoor <priya@example.com>; Bob Martin <bob@example.com>\nSubject: Product Roadmap Review\n\nHi team,\n\nI propose 2024-10-02 at 10:15. Thoughts?\n\nTara",
+    "output": [
+      {
+        "subject": "Product Roadmap Review",
+        "date": "2024-10-02",
+        "time": "10:15",
+        "invitees": [
+          "Tara Kim",
+          "Priya Kapoor",
+          "Bob Martin"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Grace Patel <grace@example.com>\nTo: Omar Haddad <omar@example.com>\nSubject: One-pager walkthrough coming Thursday\n\nHi Omar,\n\nComing Thursday at 13:30 okay for you?\n\nGrace",
+    "output": [
+      {
+        "subject": "One-pager Walkthrough",
+        "date": "2024-06-27",
+        "time": "13:30",
+        "invitees": [
+          "Grace Patel",
+          "Omar Haddad"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Board Assistant <assist@corp.com>\nTo: Marco Rossi <marco@example.com>; Lena Müller <lena@example.com>; Sven Larsson <sven@example.com>\nSubject: Risk Committee\n\nPlease attend risk committee on 2025-02-14 at 09:00.\n\nSam",
+    "output": [
+      {
+        "subject": "Risk Committee",
+        "date": "2025-02-14",
+        "time": "09:00",
+        "invitees": [
+          "Board Assistant",
+          "Marco Rossi",
+          "Lena Müller",
+          "Sven Larsson"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Nina Johansson <nina@example.com>\nTo: Alice Chen <alice@example.com>\nSubject: next Friday brainstorm\n\nHey Alice,\n\nBrainstorm next Friday at 14:40?\n\nNina",
+    "output": [
+      {
+        "subject": "Brainstorm",
+        "date": "2024-06-28",
+        "time": "14:40",
+        "invitees": [
+          "Nina Johansson",
+          "Alice Chen"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Bob Martin <bob@example.com>\nTo: Frank Xu <frank@example.com>; Carlos Diaz <carlos@example.com>\nSubject: Server maintenance call\n\nGents,\n\nCall on 2024-07-30 at 06:30 UTC.\n\nBob",
+    "output": [
+      {
+        "subject": "Server Maintenance Call",
+        "date": "2024-07-30",
+        "time": "06:30",
+        "invitees": [
+          "Bob Martin",
+          "Frank Xu",
+          "Carlos Diaz"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Omar Haddad <omar@example.com>\nTo: Quinn Parker <quinn@example.com>\nSubject: FYI – moved our check-in\n\nLet’s push the check-in originally on 2024-06-22 to 2024-06-26 at 18:00.\n\nThanks,\nOmar",
+    "output": [
+      {
+        "subject": "Check-in Rescheduled",
+        "date": "2024-06-26",
+        "time": "18:00",
+        "invitees": [
+          "Omar Haddad",
+          "Quinn Parker"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Priya Kapoor <priya@example.com>\nTo: Grace Patel <grace@example.com>; Dana Lee <dana@example.com>\nSubject: Marketing brainstorm – three weeks out\n\nTeam,\n\nThree weeks from today at 11:45.\n\nPK",
+    "output": [
+      {
+        "subject": "Marketing Brainstorm",
+        "date": "2024-07-11",
+        "time": "11:45",
+        "invitees": [
+          "Priya Kapoor",
+          "Grace Patel",
+          "Dana Lee"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Carlos Diaz <carlos@example.com>\nTo: Hiroshi Tanaka <hiroshi@example.com>\nSubject: Ops Review\n\nHiroshi,\n\nOps review 2024-11-21 16:00.\n\nC",
+    "output": [
+      {
+        "subject": "Ops Review",
+        "date": "2024-11-21",
+        "time": "16:00",
+        "invitees": [
+          "Carlos Diaz",
+          "Hiroshi Tanaka"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Evelyn Wright <evelyn@example.com>\nTo: Rita Gomez <rita@example.com>\nSubject: Lunch catch-up tomorrow\n\nNoon tomorrow?\n\nE",
+    "output": [
+      {
+        "subject": "Lunch Catch-up",
+        "date": "2024-06-21",
+        "time": "12:00",
+        "invitees": [
+          "Evelyn Wright",
+          "Rita Gomez"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Sven Larsson <sven@example.com>\nTo: Tara Kim <tara@example.com>; Lena Müller <lena@example.com>\nSubject: Sunday bug bash\n\nSunday 08:00 sharp.\n\nSven",
+    "output": [
+      {
+        "subject": "Bug Bash",
+        "date": "2024-06-23",
+        "time": "08:00",
+        "invitees": [
+          "Sven Larsson",
+          "Tara Kim",
+          "Lena Müller"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: HR Bot <hr@corp.com>\nTo: New Joiners\nSubject: Welcome Webinar\n\nAutomatically scheduled: 2024-07-08 13:00.\n",
+    "output": [
+      {
+        "subject": "Welcome Webinar",
+        "date": "2024-07-08",
+        "time": "13:00",
+        "invitees": [
+          "New Joiners"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Jack O'Neill <jack@example.com>\nTo: Sven Larsson <sven@example.com>\nSubject: Ping – when free?\n\nLet’s decide later.",
+    "output": []
+  },
+  {
+    "input": "From: Kamal Singh <kamal@example.com>\nTo: Bob Martin <bob@example.com>; Grace Patel <grace@example.com>; Irene Novak <irene@example.com>\nSubject: Data Governance WG\n\nProposal:\n• 2024-08-05 at 10:00\nLet me know.\n\nKamal",
+    "output": [
+      {
+        "subject": "Data Governance WG",
+        "date": "2024-08-05",
+        "time": "10:00",
+        "invitees": [
+          "Kamal Singh",
+          "Bob Martin",
+          "Grace Patel",
+          "Irene Novak"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Lena Müller <lena@example.com>\nTo: Omar Haddad <omar@example.com>\nSubject: Half-year review\n\n2024-12-18 at 15:45 works?\n\n–L",
+    "output": [
+      {
+        "subject": "Half-year Review",
+        "date": "2024-12-18",
+        "time": "15:45",
+        "invitees": [
+          "Lena Müller",
+          "Omar Haddad"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Marco Rossi <marco@example.com>\nTo: Carlos Diaz <carlos@example.com>\nSubject: Italian lunch next Wednesday\n\nMeet at 13:20 next Wednesday.\n\nMarco",
+    "output": [
+      {
+        "subject": "Italian Lunch",
+        "date": "2024-06-26",
+        "time": "13:20",
+        "invitees": [
+          "Marco Rossi",
+          "Carlos Diaz"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Quinn Parker <quinn@example.com>\nTo: Hiroshi Tanaka <hiroshi@example.com>; Alice Chen <alice@example.com>\nSubject: Security review next quarter\n\nSuggest 2025-02-03 at 09:10.\n\nQ",
+    "output": [
+      {
+        "subject": "Security Review",
+        "date": "2025-02-03",
+        "time": "09:10",
+        "invitees": [
+          "Quinn Parker",
+          "Hiroshi Tanaka",
+          "Alice Chen"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Dana Lee <dana@example.com>\nTo: Bob Martin <bob@example.com>\nSubject: Follow-up later today\n\nPing me at half past eight tonight.\n\nDana",
+    "output": [
+      {
+        "subject": "Evening Follow-up",
+        "date": "2024-06-20",
+        "time": "20:30",
+        "invitees": [
+          "Dana Lee",
+          "Bob Martin"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Tara Kim <tara@example.com>\nTo: Grace Patel <grace@example.com>\nSubject: Moved: roadmap review\n\nLet’s switch from 10:15 to 11:00 same day 2024-10-02.\n\nTara",
+    "output": [
+      {
+        "subject": "Roadmap Review Update",
+        "date": "2024-10-02",
+        "time": "11:00",
+        "invitees": [
+          "Tara Kim",
+          "Grace Patel"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Board Assistant <assist@corp.com>\nTo: Board Members\nSubject: CANCELLED – Risk Committee 14 Feb\n\nMeeting cancelled due to travel bans.",
+    "output": []
+  },
+  {
+    "input": "From: Priya Kapoor <priya@example.com>\nTo: Nina Johansson <nina@example.com>; Rita Gomez <rita@example.com>\nSubject: SEO Deep Dive – coming Tuesday morning\n\nLet’s do 08:15 coming Tuesday.\n\nPriya",
+    "output": [
+      {
+        "subject": "SEO Deep Dive",
+        "date": "2024-06-25",
+        "time": "08:15",
+        "invitees": [
+          "Priya Kapoor",
+          "Nina Johansson",
+          "Rita Gomez"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Carlos Diaz <carlos@example.com>\nTo: Quinn Parker <quinn@example.com>\nSubject: Architecture review next Friday morning\n\nSay 07:50 next Friday?\n\nCarlos",
+    "output": [
+      {
+        "subject": "Architecture Review",
+        "date": "2024-06-28",
+        "time": "07:50",
+        "invitees": [
+          "Carlos Diaz",
+          "Quinn Parker"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Hiroshi Tanaka <hiroshi@example.com>\nTo: Lena Müller <lena@example.com>\nSubject: sprint planning\n\n2024-07-01 09:00.\n\nHT",
+    "output": [
+      {
+        "subject": "Sprint Planning",
+        "date": "2024-07-01",
+        "time": "09:00",
+        "invitees": [
+          "Hiroshi Tanaka",
+          "Lena Müller"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Omar Haddad <omar@example.com>\nTo: Jack O'Neill <jack@example.com>\nSubject: Sunday shift handover\n\nLet’s speak Sunday 18:30.\n\nOmar",
+    "output": [
+      {
+        "subject": "Shift Handover",
+        "date": "2024-06-23",
+        "time": "18:30",
+        "invitees": [
+          "Omar Haddad",
+          "Jack O'Neill"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Bob Martin <bob@example.com>\nTo: Kamal Singh <kamal@example.com>\nSubject: Move the maintenance call\n\nCan we move 2024-07-30 06:30 to 07:00 same day?\n\nBob",
+    "output": [
+      {
+        "subject": "Maintenance Call Updated",
+        "date": "2024-07-30",
+        "time": "07:00",
+        "invitees": [
+          "Bob Martin",
+          "Kamal Singh"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Evelyn Wright <evelyn@example.com>\nTo: Grace Patel <grace@example.com>\nSubject: Afternoon tea three weeks out\n\nHow about three weeks from today at 15:00?\n\nEvelyn",
+    "output": [
+      {
+        "subject": "Afternoon Tea",
+        "date": "2024-07-11",
+        "time": "15:00",
+        "invitees": [
+          "Evelyn Wright",
+          "Grace Patel"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Frank Xu <frank@example.com>\nTo: Priya Kapoor <priya@example.com>; Rita Gomez <rita@example.com>\nSubject: Early bird brainstorm\n\n2024-08-12 at 06:45 sharp.\n\nFrank",
+    "output": [
+      {
+        "subject": "Early Bird Brainstorm",
+        "date": "2024-08-12",
+        "time": "06:45",
+        "invitees": [
+          "Frank Xu",
+          "Priya Kapoor",
+          "Rita Gomez"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Nina Johansson <nina@example.com>\nTo: Board Assistant <assist@corp.com>\nSubject: Clarify – no meeting needed\n\nIgnore my previous email.",
+    "output": []
+  },
+  {
+    "input": "From: Sven Larsson <sven@example.com>\nTo: Omar Haddad <omar@example.com>; Quinn Parker <quinn@example.com>\nSubject: Deployment retro next Monday afternoon\n\nNext Monday 17:00.\n\nS",
+    "output": [
+      {
+        "subject": "Deployment Retro",
+        "date": "2024-06-24",
+        "time": "17:00",
+        "invitees": [
+          "Sven Larsson",
+          "Omar Haddad",
+          "Quinn Parker"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Rita Gomez <rita@example.com>\nTo: Carlos Diaz <carlos@example.com>\nSubject: Confirm lunchtime\n\nMeet 2024-06-27 at 12:30.\n\nRita",
+    "output": [
+      {
+        "subject": "Lunch Meeting",
+        "date": "2024-06-27",
+        "time": "12:30",
+        "invitees": [
+          "Rita Gomez",
+          "Carlos Diaz"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Tara Kim <tara@example.com>\nTo: Sven Larsson <sven@example.com>\nSubject: Post-mortem\n\n2025-03-01 14:15.\n\nT",
+    "output": [
+      {
+        "subject": "Post-mortem",
+        "date": "2025-03-01",
+        "time": "14:15",
+        "invitees": [
+          "Tara Kim",
+          "Sven Larsson"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Alice Chen <alice@example.com>\nTo: Bob Martin <bob@example.com>\nSubject: Holiday party planning\n\nLet’s kick off on 2024-10-28 16:20.\n\nAlice",
+    "output": [
+      {
+        "subject": "Holiday Party Planning",
+        "date": "2024-10-28",
+        "time": "16:20",
+        "invitees": [
+          "Alice Chen",
+          "Bob Martin"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Kamal Singh <kamal@example.com>\nTo: Evelyn Wright <evelyn@example.com>; Lena Müller <lena@example.com>\nSubject: Knowledge share\n\n2024-08-22 11:10.\n\nK",
+    "output": [
+      {
+        "subject": "Knowledge Share",
+        "date": "2024-08-22",
+        "time": "11:10",
+        "invitees": [
+          "Kamal Singh",
+          "Evelyn Wright",
+          "Lena Müller"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Hiroshi Tanaka <hiroshi@example.com>\nTo: Tara Kim <tara@example.com>\nSubject: Sprint demo tomorrow\n\nTomorrow 10:40 ok?\n\nHiroshi",
+    "output": [
+      {
+        "subject": "Sprint Demo",
+        "date": "2024-06-21",
+        "time": "10:40",
+        "invitees": [
+          "Hiroshi Tanaka",
+          "Tara Kim"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Bob Martin <bob@example.com>\nTo: Priya Kapoor <priya@example.com>\nSubject: Cancel lunch\n\nLet’s cancel.",
+    "output": []
+  },
+  {
+    "input": "From: Marco Rossi <marco@example.com>\nTo: Dana Lee <dana@example.com>; Grace Patel <grace@example.com>; Rita Gomez <rita@example.com>\nSubject: Brand workshop next Friday afternoon\n\nNext Friday 15:55.\n\nM",
+    "output": [
+      {
+        "subject": "Brand Workshop",
+        "date": "2024-06-28",
+        "time": "15:55",
+        "invitees": [
+          "Marco Rossi",
+          "Dana Lee",
+          "Grace Patel",
+          "Rita Gomez"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Omar Haddad <omar@example.com>\nTo: Nina Johansson <nina@example.com>\nSubject: Monday morning check-in\n\nLet’s meet 2024-07-15 at 08:05.\n\n-O",
+    "output": [
+      {
+        "subject": "Monday Check-in",
+        "date": "2024-07-15",
+        "time": "08:05",
+        "invitees": [
+          "Omar Haddad",
+          "Nina Johansson"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Quinn Parker <quinn@example.com>\nTo: Kamal Singh <kamal@example.com>; Bob Martin <bob@example.com>\nSubject: Quick sync today\n\nCan we hop on at 16:00 today?\n\nQ",
+    "output": [
+      {
+        "subject": "Quick Sync",
+        "date": "2024-06-20",
+        "time": "16:00",
+        "invitees": [
+          "Quinn Parker",
+          "Kamal Singh",
+          "Bob Martin"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Evelyn Wright <evelyn@example.com>\nTo: Omar Haddad <omar@example.com>\nSubject: Project X closure\n\nClosure meeting 2024-09-17 09:25.\n\nE",
+    "output": [
+      {
+        "subject": "Project X Closure",
+        "date": "2024-09-17",
+        "time": "09:25",
+        "invitees": [
+          "Evelyn Wright",
+          "Omar Haddad"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Board Assistant <assist@corp.com>\nTo: Board Members\nSubject: Audit Committee pre-read discussion\n\nSlot 2024-11-29 13:50.\n\nSam",
+    "output": [
+      {
+        "subject": "Audit Committee Discussion",
+        "date": "2024-11-29",
+        "time": "13:50",
+        "invitees": [
+          "Board Members"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Alice Chen <alice@example.com>\nTo: Hiroshi Tanaka <hiroshi@example.com>\nSubject: Late night debug\n\nLet’s call at 22:10 tonight.\n\nAlice",
+    "output": [
+      {
+        "subject": "Late Night Debug",
+        "date": "2024-06-20",
+        "time": "22:10",
+        "invitees": [
+          "Alice Chen",
+          "Hiroshi Tanaka"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Tara Kim <tara@example.com>\nTo: Quinn Parker <quinn@example.com>\nSubject: Reschedule security review\n\nMove 2025-02-03 09:10 to 09:40 same day.\n\nT",
+    "output": [
+      {
+        "subject": "Security Review Update",
+        "date": "2025-02-03",
+        "time": "09:40",
+        "invitees": [
+          "Tara Kim",
+          "Quinn Parker"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Frank Xu <frank@example.com>\nTo: Bob Martin <bob@example.com>\nSubject: Ping – meet next Tuesday?\n\nNext Tuesday 12:05?\n\nF",
+    "output": [
+      {
+        "subject": "Meetup",
+        "date": "2024-06-25",
+        "time": "12:05",
+        "invitees": [
+          "Frank Xu",
+          "Bob Martin"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Nina Johansson <nina@example.com>\nTo: Lena Müller <lena@example.com>; Kamal Singh <kamal@example.com>\nSubject: Design critique – 2 Aug\n\n2024-08-02 14:00.\n\nNina",
+    "output": [
+      {
+        "subject": "Design Critique",
+        "date": "2024-08-02",
+        "time": "14:00",
+        "invitees": [
+          "Nina Johansson",
+          "Lena Müller",
+          "Kamal Singh"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Omar Haddad <omar@example.com>\nTo: Grace Patel <grace@example.com>\nSubject: Shift start brief\n\n2024-06-22 05:55.\n\n–O",
+    "output": [
+      {
+        "subject": "Shift Brief",
+        "date": "2024-06-22",
+        "time": "05:55",
+        "invitees": [
+          "Omar Haddad",
+          "Grace Patel"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Rita Gomez <rita@example.com>\nTo: Sven Larsson <sven@example.com>\nSubject: Weekend workshop\n\nSaturday 2024-06-29 09:35.\n\nR",
+    "output": [
+      {
+        "subject": "Weekend Workshop",
+        "date": "2024-06-29",
+        "time": "09:35",
+        "invitees": [
+          "Rita Gomez",
+          "Sven Larsson"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Board Assistant <assist@corp.com>\nTo: Marco Rossi <marco@example.com>\nSubject: Duplicate invite\n\nIgnore previous – no additional meeting.",
+    "output": []
+  },
+  {
+    "input": "From: Bob Martin <bob@example.com>\nTo: Omar Haddad <omar@example.com>; Dana Lee <dana@example.com>\nSubject: Planning offsite\n\nCould we lock 2024-08-28 10:40?\n\nBob",
+    "output": [
+      {
+        "subject": "Planning Offsite",
+        "date": "2024-08-28",
+        "time": "10:40",
+        "invitees": [
+          "Bob Martin",
+          "Omar Haddad",
+          "Dana Lee"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Carlos Diaz <carlos@example.com>\nTo: Tara Kim <tara@example.com>\nSubject: Hotfix deployment call\n\nIn 48 hours at 02:00 (so 2024-06-22).\n\nCarlos",
+    "output": [
+      {
+        "subject": "Hotfix Call",
+        "date": "2024-06-22",
+        "time": "02:00",
+        "invitees": [
+          "Carlos Diaz",
+          "Tara Kim"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Irene Novak <irene@example.com>\nTo: Alice Chen <alice@example.com>\nSubject: Q1 planning – save the date\n\n2025-01-09 09:00.\n\nIrene",
+    "output": [
+      {
+        "subject": "Q1 Planning",
+        "date": "2025-01-09",
+        "time": "09:00",
+        "invitees": [
+          "Irene Novak",
+          "Alice Chen"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Quinn Parker <quinn@example.com>\nTo: Marco Rossi <marco@example.com>\nSubject: Cancelled: architecture review\n\nWe’ll skip it.",
+    "output": []
+  },
+  {
+    "input": "From: Evelyn Wright <evelyn@example.com>\nTo: Priya Kapoor <priya@example.com>; Bob Martin <bob@example.com>\nSubject: Wrap-up next Thursday evening\n\nNext Thursday 19:20.\n\nE",
+    "output": [
+      {
+        "subject": "Wrap-up",
+        "date": "2024-06-27",
+        "time": "19:20",
+        "invitees": [
+          "Evelyn Wright",
+          "Priya Kapoor",
+          "Bob Martin"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Hiroshi Tanaka <hiroshi@example.com>\nTo: Board Assistant <assist@corp.com>\nSubject: Investor dinner\n\n2024-09-05 20:00.\n\nHT",
+    "output": [
+      {
+        "subject": "Investor Dinner",
+        "date": "2024-09-05",
+        "time": "20:00",
+        "invitees": [
+          "Hiroshi Tanaka",
+          "Board Assistant"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Sven Larsson <sven@example.com>\nTo: Grace Patel <grace@example.com>\nSubject: Training session\n\nThree weeks from today 07:30.\n\nS",
+    "output": [
+      {
+        "subject": "Training Session",
+        "date": "2024-07-11",
+        "time": "07:30",
+        "invitees": [
+          "Sven Larsson",
+          "Grace Patel"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Frank Xu <frank@example.com>\nTo: Omar Haddad <omar@example.com>\nSubject: Data migration next Wednesday night\n\nNext Wednesday 21:45.\n\nF",
+    "output": [
+      {
+        "subject": "Data Migration",
+        "date": "2024-06-26",
+        "time": "21:45",
+        "invitees": [
+          "Frank Xu",
+          "Omar Haddad"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Tara Kim <tara@example.com>\nTo: Hiroshi Tanaka <hiroshi@example.com>\nSubject: Morning jog?\n\nTomorrow 06:10.\n\nT",
+    "output": [
+      {
+        "subject": "Morning Jog",
+        "date": "2024-06-21",
+        "time": "06:10",
+        "invitees": [
+          "Tara Kim",
+          "Hiroshi Tanaka"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Rita Gomez <rita@example.com>\nTo: Kamal Singh <kamal@example.com>\nSubject: Fwd: Ops call\n\nSee below – 2024-07-18 11:35.\n\nR",
+    "output": [
+      {
+        "subject": "Ops Call",
+        "date": "2024-07-18",
+        "time": "11:35",
+        "invitees": [
+          "Rita Gomez",
+          "Kamal Singh"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Alice Chen <alice@example.com>\nTo: Nina Johansson <nina@example.com>; Carlos Diaz <carlos@example.com>\nSubject: Handoff today at noon\n\nLet’s meet noon today.\n\nA",
+    "output": [
+      {
+        "subject": "Handoff",
+        "date": "2024-06-20",
+        "time": "12:00",
+        "invitees": [
+          "Alice Chen",
+          "Nina Johansson",
+          "Carlos Diaz"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Bob Martin <bob@example.com>\nTo: Sven Larsson <sven@example.com>\nSubject: Sync next Friday early\n\n06:15 next Friday.\n\nBob",
+    "output": [
+      {
+        "subject": "Early Sync",
+        "date": "2024-06-28",
+        "time": "06:15",
+        "invitees": [
+          "Bob Martin",
+          "Sven Larsson"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Marco Rossi <marco@example.com>\nTo: Rita Gomez <rita@example.com>\nSubject: Mid-year review\n\n2024-07-02 10:05.\n\nM",
+    "output": [
+      {
+        "subject": "Mid-year Review",
+        "date": "2024-07-02",
+        "time": "10:05",
+        "invitees": [
+          "Marco Rossi",
+          "Rita Gomez"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Quinn Parker <quinn@example.com>\nTo: Grace Patel <grace@example.com>; Evelyn Wright <evelyn@example.com>\nSubject: Coffee break next Tuesday\n\n10:10 next Tuesday.\n\nQP",
+    "output": [
+      {
+        "subject": "Coffee Break",
+        "date": "2024-06-25",
+        "time": "10:10",
+        "invitees": [
+          "Quinn Parker",
+          "Grace Patel",
+          "Evelyn Wright"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Dana Lee <dana@example.com>\nTo: Omar Haddad <omar@example.com>\nSubject: Move shift brief\n\nSwitch 05:55 on 22 Jun to 05:50 same day.\n\nD",
+    "output": [
+      {
+        "subject": "Shift Brief Update",
+        "date": "2024-06-22",
+        "time": "05:50",
+        "invitees": [
+          "Dana Lee",
+          "Omar Haddad"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Board Assistant <assist@corp.com>\nTo: All Hands\nSubject: Company-wide AMA\n\nSave 2024-11-12 12:30.\n\nSam",
+    "output": [
+      {
+        "subject": "Company-wide AMA",
+        "date": "2024-11-12",
+        "time": "12:30",
+        "invitees": [
+          "All Hands"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Frank Xu <frank@example.com>\nTo: Sven Larsson <sven@example.com>\nSubject: Ping\n\nNo meeting necessary.",
+    "output": []
+  },
+  {
+    "input": "From: Hiroshi Tanaka <hiroshi@example.com>\nTo: Bob Martin <bob@example.com>\nSubject: Reschedule investor dinner\n\nMove 2024-09-05 20:00 to 2024-09-06 20:00.\n\nHiroshi",
+    "output": [
+      {
+        "subject": "Investor Dinner Updated",
+        "date": "2024-09-06",
+        "time": "20:00",
+        "invitees": [
+          "Hiroshi Tanaka",
+          "Bob Martin"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Rita Gomez <rita@example.com>\nTo: Nina Johansson <nina@example.com>\nSubject: Saturday brunch\n\nSaturday 10:00 (2024-06-22).\n\nRita",
+    "output": [
+      {
+        "subject": "Saturday Brunch",
+        "date": "2024-06-22",
+        "time": "10:00",
+        "invitees": [
+          "Rita Gomez",
+          "Nina Johansson"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Alice Chen <alice@example.com>\nTo: Board Assistant <assist@corp.com>\nSubject: Monthly metrics review\n\n2024-07-29 09:55.\n\nAlice",
+    "output": [
+      {
+        "subject": "Metrics Review",
+        "date": "2024-07-29",
+        "time": "09:55",
+        "invitees": [
+          "Alice Chen",
+          "Board Assistant"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Bob Martin <bob@example.com>\nTo: Grace Patel <grace@example.com>\nSubject: Morning stand-up\n\nDaily quick call at 09:00 starting 2024-06-21.\n\nBob",
+    "output": [
+      {
+        "subject": "Morning Stand-up",
+        "date": "2024-06-21",
+        "time": "09:00",
+        "invitees": [
+          "Bob Martin",
+          "Grace Patel"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Kamal Singh <kamal@example.com>\nTo: Omar Haddad <omar@example.com>; Quinn Parker <quinn@example.com>\nSubject: Feature freeze review next Wednesday\n\nNext Wednesday 14:25.\n\nKamal",
+    "output": [
+      {
+        "subject": "Feature Freeze Review",
+        "date": "2024-06-26",
+        "time": "14:25",
+        "invitees": [
+          "Kamal Singh",
+          "Omar Haddad",
+          "Quinn Parker"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Lena Müller <lena@example.com>\nTo: Tara Kim <tara@example.com>\nSubject: App store launch retro – 3 Aug\n\n2024-08-03 13:45.\n\n-L",
+    "output": [
+      {
+        "subject": "Launch Retro",
+        "date": "2024-08-03",
+        "time": "13:45",
+        "invitees": [
+          "Lena Müller",
+          "Tara Kim"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Marco Rossi <marco@example.com>\nTo: Hiroshi Tanaka <hiroshi@example.com>; Evelyn Wright <evelyn@example.com>\nSubject: Training dry run\n\n2024-07-22 11:25.\n\nM",
+    "output": [
+      {
+        "subject": "Training Dry Run",
+        "date": "2024-07-22",
+        "time": "11:25",
+        "invitees": [
+          "Marco Rossi",
+          "Hiroshi Tanaka",
+          "Evelyn Wright"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Nina Johansson <nina@example.com>\nTo: Carlos Diaz <carlos@example.com>\nSubject: Friday wrap-up\n\nThis Friday 17:40.\n\nNina",
+    "output": [
+      {
+        "subject": "Friday Wrap-up",
+        "date": "2024-06-21",
+        "time": "17:40",
+        "invitees": [
+          "Nina Johansson",
+          "Carlos Diaz"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Omar Haddad <omar@example.com>\nTo: Board Members\nSubject: Long-term strategy workshop\n\n2024-12-09 10:50.\n\nOmar",
+    "output": [
+      {
+        "subject": "Strategy Workshop",
+        "date": "2024-12-09",
+        "time": "10:50",
+        "invitees": [
+          "Board Members"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Priya Kapoor <priya@example.com>\nTo: Grace Patel <grace@example.com>\nSubject: Late-night deploy check\n\nTonight 23:55.\n\nP",
+    "output": [
+      {
+        "subject": "Late-night Deploy Check",
+        "date": "2024-06-20",
+        "time": "23:55",
+        "invitees": [
+          "Priya Kapoor",
+          "Grace Patel"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Carlos Diaz <carlos@example.com>\nTo: Frank Xu <frank@example.com>\nSubject: Remove meeting\n\nDelete all invites.",
+    "output": []
+  },
+  {
+    "input": "From: Sven Larsson <sven@example.com>\nTo: Bob Martin <bob@example.com>\nSubject: KPI review next Thursday morning\n\n07:05 next Thursday.\n\nSven",
+    "output": [
+      {
+        "subject": "KPI Review",
+        "date": "2024-06-27",
+        "time": "07:05",
+        "invitees": [
+          "Sven Larsson",
+          "Bob Martin"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Rita Gomez <rita@example.com>\nTo: Tara Kim <tara@example.com>; Kamal Singh <kamal@example.com>; Omar Haddad <omar@example.com>\nSubject: Content calendar 2025\n\n2025-01-15 15:20.\n\nRita",
+    "output": [
+      {
+        "subject": "Content Calendar Planning",
+        "date": "2025-01-15",
+        "time": "15:20",
+        "invitees": [
+          "Rita Gomez",
+          "Tara Kim",
+          "Kamal Singh",
+          "Omar Haddad"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Hiroshi Tanaka <hiroshi@example.com>\nTo: Sven Larsson <sven@example.com>\nSubject: Site tour – three weeks out\n\nThree weeks from today 09:35.\n\nHiroshi",
+    "output": [
+      {
+        "subject": "Site Tour",
+        "date": "2024-07-11",
+        "time": "09:35",
+        "invitees": [
+          "Hiroshi Tanaka",
+          "Sven Larsson"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Alice Chen <alice@example.com>\nTo: Quinn Parker <quinn@example.com>; Rita Gomez <rita@example.com>\nSubject: Design sprint planning next Monday\n\n11:30 next Monday.\n\nA",
+    "output": [
+      {
+        "subject": "Design Sprint Planning",
+        "date": "2024-06-24",
+        "time": "11:30",
+        "invitees": [
+          "Alice Chen",
+          "Quinn Parker",
+          "Rita Gomez"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Bob Martin <bob@example.com>\nTo: Nina Johansson <nina@example.com>\nSubject: ideation – cancel\n\nNo meeting.",
+    "output": []
+  },
+  {
+    "input": "From: Grace Patel <grace@example.com>\nTo: Carlos Diaz <carlos@example.com>\nSubject: Marketing Q4 kickoff\n\n2024-10-07 13:55.\n\nG",
+    "output": [
+      {
+        "subject": "Marketing Q4 Kickoff",
+        "date": "2024-10-07",
+        "time": "13:55",
+        "invitees": [
+          "Grace Patel",
+          "Carlos Diaz"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Dana Lee <dana@example.com>\nTo: Hiroshi Tanaka <hiroshi@example.com>\nSubject: Testing session\n\n2024-09-19 16:05.\n\nDana",
+    "output": [
+      {
+        "subject": "Testing Session",
+        "date": "2024-09-19",
+        "time": "16:05",
+        "invitees": [
+          "Dana Lee",
+          "Hiroshi Tanaka"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Quinn Parker <quinn@example.com>\nTo: Alice Chen <alice@example.com>\nSubject: quick touch base tomorrow morning\n\nTomorrow 07:25 ok?\n\nQ",
+    "output": [
+      {
+        "subject": "Touch Base",
+        "date": "2024-06-21",
+        "time": "07:25",
+        "invitees": [
+          "Quinn Parker",
+          "Alice Chen"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Sven Larsson <sven@example.com>\nTo: Rita Gomez <rita@example.com>\nSubject: Office move planning\n\n2024-08-09 09:15.\n\nSven",
+    "output": [
+      {
+        "subject": "Office Move Planning",
+        "date": "2024-08-09",
+        "time": "09:15",
+        "invitees": [
+          "Sven Larsson",
+          "Rita Gomez"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Omar Haddad <omar@example.com>\nTo: Frank Xu <frank@example.com>; Grace Patel <grace@example.com>\nSubject: Year-end patching window\n\n2024-12-27 03:40.\n\nOmar",
+    "output": [
+      {
+        "subject": "Year-end Patching",
+        "date": "2024-12-27",
+        "time": "03:40",
+        "invitees": [
+          "Omar Haddad",
+          "Frank Xu",
+          "Grace Patel"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Board Assistant <assist@corp.com>\nTo: Board Members\nSubject: Budget sign-off – next Monday\n\n09:00 next Monday.\n\nSam",
+    "output": [
+      {
+        "subject": "Budget Sign-off",
+        "date": "2024-06-24",
+        "time": "09:00",
+        "invitees": [
+          "Board Assistant",
+          "Board Members"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Kamal Singh <kamal@example.com>\nTo: Lena Müller <lena@example.com>\nSubject: 2025 strategy briefing\n\n2025-02-20 14:30.\n\nK",
+    "output": [
+      {
+        "subject": "2025 Strategy Briefing",
+        "date": "2025-02-20",
+        "time": "14:30",
+        "invitees": [
+          "Kamal Singh",
+          "Lena Müller"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Hiroshi Tanaka <hiroshi@example.com>\nTo: Carlos Diaz <carlos@example.com>\nSubject: Sunday late call\n\n22:20 Sunday 2024-06-23.\n\nH",
+    "output": [
+      {
+        "subject": "Late Call",
+        "date": "2024-06-23",
+        "time": "22:20",
+        "invitees": [
+          "Hiroshi Tanaka",
+          "Carlos Diaz"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Nina Johansson <nina@example.com>\nTo: Omar Haddad <omar@example.com>\nSubject: Cancel shift handover\n\nNo longer needed.",
+    "output": []
+  },
+  {
+    "input": "From: Grace Patel <grace@example.com>\nTo: Sven Larsson <sven@example.com>; Dana Lee <dana@example.com>\nSubject: Quarterly roadmap next Wednesday\n\n11:00 next Wednesday.\n\nGrace",
+    "output": [
+      {
+        "subject": "Quarterly Roadmap",
+        "date": "2024-06-26",
+        "time": "11:00",
+        "invitees": [
+          "Grace Patel",
+          "Sven Larsson",
+          "Dana Lee"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Bob Martin <bob@example.com>\nTo: Tara Kim <tara@example.com>\nSubject: Thursday ideation session\n\n2024-07-25 10:30.\n\nBob",
+    "output": [
+      {
+        "subject": "Ideation Session",
+        "date": "2024-07-25",
+        "time": "10:30",
+        "invitees": [
+          "Bob Martin",
+          "Tara Kim"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Quinn Parker <quinn@example.com>\nTo: Hiroshi Tanaka <hiroshi@example.com>\nSubject: Firmware update review – next Friday\n\n13:10 next Friday.\n\nQ",
+    "output": [
+      {
+        "subject": "Firmware Update Review",
+        "date": "2024-06-28",
+        "time": "13:10",
+        "invitees": [
+          "Quinn Parker",
+          "Hiroshi Tanaka"
+        ]
+      }
+    ]
+  },
+  {
+    "input": "From: Carlos Diaz <carlos@example.com>\nTo: Bob Martin <bob@example.com>\nSubject: Add on call\n\nLet’s add 2024-06-20 14:55.\n\nCarlos",
+    "output": [
+      {
+        "subject": "On-call Add",
+        "date": "2024-06-20",
+        "time": "14:55",
+        "invitees": [
+          "Carlos Diaz",
+          "Bob Martin"
         ]
       }
     ]
