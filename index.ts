@@ -68,6 +68,7 @@ const bestResult = await runBayesianOptimization(
     model: optimizationModel,
     numTrials: 10,
     numFewShot: 3,
+    numDemoCandidates: 10,
     miniBatchSize: 10,
     miniBatchFullEvalSteps: 10,
   }
